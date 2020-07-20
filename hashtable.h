@@ -1,6 +1,14 @@
 #ifndef HASHTABLE_H
 #define HASHTABLE_H
 
+/*
+  
+  2020-07-20  John Pereira  <github.com/redpandora>
+  
+  * Added iterating through an hashtable with ht_foreach
+  
+  */
+
 #include <stdbool.h>
 #include <stddef.h>
 
@@ -26,6 +34,7 @@
 
 typedef int (*comparison_t)(void*, void*, size_t);
 typedef size_t (*hash_t)(void*, size_t);
+typedef void (*ht_foreach_t)(void*);
 
 /****************** STRUCTURES ******************/
 
@@ -62,6 +71,8 @@ int ht_setup(HashTable* table,
 int ht_copy(HashTable* first, HashTable* second);
 int ht_move(HashTable* first, HashTable* second);
 int ht_swap(HashTable* first, HashTable* second);
+
+int ht_foreach(HashTable* table, ht_foreach_t fun);
 
 /* Destructor */
 int ht_destroy(HashTable* table);
