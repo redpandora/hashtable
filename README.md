@@ -29,6 +29,9 @@ int main(int argc, const char* argv[]) {
 		printf("%d's value is: %f\n", x, y);
 	}
 
+  	/* iterate values */
+     	ht_foreach(&table, &display_number);
+
 	ht_erase(&table, &x);
 
 	ht_clear(&table);
@@ -45,3 +48,4 @@ This project is released under the [MIT License](http://goldsborough.mit-license
 [Peter Goldsborough](http://www.goldsborough.me) + [cat](https://goo.gl/IpUmJn) :heart:
 
 <a href="https://gratipay.com/~goldsborough/"><img src="http://img.shields.io/gratipay/goldsborough.png?style=flat-square"></a>
+
